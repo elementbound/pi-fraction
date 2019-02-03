@@ -41,20 +41,20 @@
         <p>
             As fraction: 
             <span class="frac">
-                <span>44</span>
+                <span class="bind">{{raw.top}}</span>
                 <span class="symbol">/</span>
-                <span class="bottom">14</span>
+                <span class="bottom bind">{{raw.bottom}}</span>
             </span>
         </p>
 
         <p>
             Or simplified:
             <span class="frac">
-                <span>22</span>
+                <span class="bind">{{simplified.top}}</span>
                 <span class="symbol">/</span>
-                <span class="bottom">7</span>
+                <span class="bottom bind">{{simplified.bottom}}</span>
             </span>
         </p>
-        <p>Or as a value: 3.1428</p>
+        <p class="bind">Or as a value: {{value}}</p>
     </body>
 </html>
