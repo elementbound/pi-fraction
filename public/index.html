@@ -2,9 +2,59 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Welcome to Webpack</title>
+        <title>π</title>
+
+        <style type="text/css">
+            body {
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                color: black;
+
+                text-align: center;
+            }
+
+            /* Thanks, lokesh! */
+            /* https://stackoverflow.com/a/35312288 */
+            .frac {
+                display: inline-block;
+                position: relative;
+                vertical-align: middle;
+                letter-spacing: 0.001em;
+                text-align: center;
+            }
+            .frac > span {
+                display: block;
+                padding: 0.1em;
+            }
+            .frac span.bottom {
+                border-top: thin solid black;
+            }
+            .frac span.symbol {
+                display: none;
+            } 
+        </style>
     </head>
     <body>
-        <code>To start edit './src/entry.js'</code>
+        <h1>π</h1>
+
+        <canvas width="512" height="512"></canvas>
+        
+        <p>
+            As fraction: 
+            <span class="frac">
+                <span>44</span>
+                <span class="symbol">/</span>
+                <span class="bottom">14</span>
+            </span>
+        </p>
+
+        <p>
+            Or simplified:
+            <span class="frac">
+                <span>22</span>
+                <span class="symbol">/</span>
+                <span class="bottom">7</span>
+            </span>
+        </p>
+        <p>Or as a value: 3.1428</p>
     </body>
 </html>
