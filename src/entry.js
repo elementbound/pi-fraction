@@ -15,6 +15,12 @@ const loop = () => {
     const bindings = bind.find(document)
     const drawingContext = canvas.init(document.querySelector('canvas'))
 
+    let best = {
+        denominator: 6,
+        divisor: 2,
+        value: 3
+    }
+
     let isTicking = true
 
     controls(
@@ -35,6 +41,12 @@ const loop = () => {
             const hit = calculator.sample(...point)
 
             canvas.drawSample(drawingContext, point, hit)
+
+            if(Math.abs(Math.PI - 4 * calculator.value) < Math.abs(Math.PI - best.value)) {
+                best.denominator = calculator.hits * 4
+                best.divisor = calculator.samples
+                best.value = best.denominator / best.divisor
+            }
         }
 
         const data = {
@@ -44,6 +56,7 @@ const loop = () => {
             },
 
             simplified: simplify(calculator.hits * 4, calculator.samples),
+            best: best,
 
             value: calculator.value * 4,
             difference: Math.PI - calculator.value * 4

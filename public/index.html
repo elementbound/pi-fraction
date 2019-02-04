@@ -79,6 +79,18 @@
         </p>
         <p class="bind">Or as a value: {{value}}</p>
         <p class="bind">Difference from known PI: {{difference}}</p>
+        
+        <p>
+            Best so far:
+            <span class="frac">
+                <span class="bind">{{best.denominator}}</span>
+                <span class="symbol">/</span>
+                <span class="bottom bind">{{best.divisor}}</span>
+            </span>
+            =
+            <span class="bind">{{best.value}}</span>
+        </p>
+
         <p>
             <button class="play">▶️</button>
             <button class="pause">⏸️</button>
