@@ -1,5 +1,6 @@
 const PiCalculator = require('./pi')
 const bind = require('./bind')
+const simplify = require('./simplify')
 
 /**
  * Take a sample and update values.
@@ -20,15 +21,11 @@ const loop = () => {
 
         const data = {
             raw: {
-                top: calculator.hits,
-                bottom: calculator.samples,
+                denominator: calculator.hits,
+                divisor: calculator.samples,
             },
 
-            // Same as raw, for now
-            simplified: {
-                top: calculator.hits,
-                bottom: calculator.samples,
-            },
+            simplified: simplify(calculator.hits, calculator.samples),
 
             value: calculator.value
         }
