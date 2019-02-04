@@ -5,8 +5,12 @@ module.exports = class PiCalculator {
     }
 
     sample(x, y) {
-        this.hits += (Math.sqrt(x*x + y*y) < 1) ? 1 : 0
-        this.samples++ 
+        const isHit = (Math.sqrt(x*x + y*y) < 1)
+
+        this.hits += isHit ? 1 : 0
+        this.samples++
+
+        return isHit
     }
 
     get value() {
